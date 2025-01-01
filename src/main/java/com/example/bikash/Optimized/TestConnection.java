@@ -6,7 +6,7 @@
 //
 //public class TestConnection {
 //    public static void main(String[] args) {
-//        String url = "jdbc:sqlserver://103.94.159.179:1433;databaseName=test_qt;encrypt=true;trustServerCertificate=true;";
+//        String url = "jdbc:sqlserver://103.94.159.179:1433;databaseName=qt_db;encrypt=true;trustServerCertificate=true;";
 //        String username = "sa";
 //        String password = "_SBD@t@S0lution12!@";
 //
