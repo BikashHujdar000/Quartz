@@ -31,6 +31,7 @@ public class ScheduleBuilder {
                 .withIdentity(jobDetail.getKey().getName(), "email-trigger")
                 .withDescription("Send Email Trigger")
                 .startAt(Date.from(startAt.toInstant()))
+//                .startNow()
                 .withSchedule(SimpleScheduleBuilder.simpleSchedule()
                         .withMisfireHandlingInstructionFireNow())  // Use this for better handling after missed executions
                 .build();

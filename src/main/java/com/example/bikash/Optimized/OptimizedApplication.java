@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
+@ComponentScan(basePackages = "com.example.bikash.Optimized")
 public class OptimizedApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
