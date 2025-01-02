@@ -89,18 +89,11 @@
 			<version>3.4.1</version>
 		</dependency>
 
-
 		<dependency>
-			<groupId>com.mchange</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>0.9.5.5</version>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<version>5.0.1</version> <!-- Check for the latest version -->
 		</dependency>
-
-<!--		<dependency>-->
-<!--			<groupId>com.zaxxer</groupId>-->
-<!--			<artifactId>HikariCP</artifactId>-->
-<!--			<version>5.0.1</version> &lt;!&ndash; Check for the latest version &ndash;&gt;-->
-<!--		</dependency>-->
 
 
 	</dependencies>

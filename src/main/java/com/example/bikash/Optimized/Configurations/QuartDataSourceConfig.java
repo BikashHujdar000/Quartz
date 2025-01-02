@@ -1,4 +1,6 @@
 package com.example.bikash.Optimized.Configurations;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
@@ -13,12 +15,17 @@ public class QuartDataSourceConfig {
     // Quartz DataSource for MSSQL
     @Bean(name = "quartzDataSource")
     public DataSource quartzDataSource() {
-        return DataSourceBuilder.create()
-                .driverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver")
-                .url("jdbc:sqlserver://103.94.159.179:1433;databaseName=qt_db;encrypt=true;trustServerCertificate=true;")
-                .username("sa")
-                .password("_SBD@t@S0lution12!@")
-                .build();
+        HikariConfig hikariConfig = new HikariConfig();
+        hikariConfig.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        hikariConfig.setJdbcUrl("jdbc:sqlserver://103.94.159.179:1433;databaseName=qt_db;encrypt=true;trustServerCertificate=true;");
+        hikariConfig.setUsername("sa");
+        hikariConfig.setPassword("_SBD@t@S0lution12!@");
+        hikariConfig.setMaximumPoolSize(10);
+        hikariConfig.setMinimumIdle(2);
+        hikariConfig.setIdleTimeout(30000);
+        hikariConfig.setConnectionTimeout(20000);
+        hikariConfig.setPoolName("QuartzHikariPool");
+        return new HikariDataSource(hikariConfig);
     }
 
     // Quartz JdbcTemplate

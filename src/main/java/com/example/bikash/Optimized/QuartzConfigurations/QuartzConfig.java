@@ -19,7 +19,6 @@ public class QuartzConfig {
     @Autowired
     private  ApplicationContext applicationContext;
 
-
     @Autowired
     @Qualifier("quartzDataSource")
     private DataSource quartzDataSource;
@@ -34,12 +33,17 @@ public class QuartzConfig {
         quartzProperties.put("org.quartz.jobStore.class", "org.quartz.impl.jdbcjobstore.JobStoreTX");
         quartzProperties.put("org.quartz.jobStore.driverDelegateClass", "org.quartz.impl.jdbcjobstore.MSSQLDelegate");
         quartzProperties.put("org.quartz.jobStore.dataSource", "quartzDataSource");
+        quartzProperties.put("org.quartz.dataSource.quartzDataSource.provider", "hikaricp"); // Use HikariCP
         quartzProperties.put("org.quartz.dataSource.quartzDataSource.driver", "com.microsoft.sqlserver.jdbc.SQLServerDriver");
         quartzProperties.put("org.quartz.dataSource.quartzDataSource.URL", "jdbc:sqlserver://103.94.159.179:1433;databaseName=qt_db;encrypt=true;trustServerCertificate=true;");
         quartzProperties.put("org.quartz.dataSource.quartzDataSource.user", "sa");
         quartzProperties.put("org.quartz.dataSource.quartzDataSource.password", "_SBD@t@S0lution12!@");
         quartzProperties.put("org.quartz.dataSource.quartzDataSource.maxConnections", "10");
-        quartzProperties.put("org.quartz.threadPool.threadCount", "10");
+        quartzProperties.put("org.quartz.dataSource.quartzDataSource.idleTimeout", "30000");
+        quartzProperties.put("org.quartz.dataSource.quartzDataSource.connectionTimeout", "20000");
+        quartzProperties.put("org.quartz.dataSource.quartzDataSource.minimumIdle", "2");
+        quartzProperties.put("org.quartz.dataSource.quartzDataSource.maximumPoolSize", "10");
+
 
         factory.setQuartzProperties(quartzProperties);
         factory.setDataSource(quartzDataSource);
