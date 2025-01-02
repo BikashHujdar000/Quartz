@@ -1,4 +1,4 @@
-package com.example.bikash.Optimized.QuartzConfigurations;
+package com.example.bikash.Optimized.Quartz.QuartzConfigurations;
 
 import org.quartz.Scheduler;
 import org.springframework.beans.factory.annotation.Autowired;

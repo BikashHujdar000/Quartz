@@ -1,13 +1,10 @@
-package com.example.bikash.Optimized.Quartz;
+package com.example.bikash.Optimized.Quartz.Response;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
 public class JobResponse {
 
     private boolean success;
@@ -15,9 +12,6 @@ public class JobResponse {
     private String jobId;
 
     private String jobGroup;
-
-    //uniques jobId and jobGroup
-    // we can have muliple jobId in a single jobGroup
 
     private String message;
 

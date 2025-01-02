@@ -1,6 +1,6 @@
-package com.example.bikash.Optimized.QuartzConfigurations;
+package com.example.bikash.Optimized.Quartz.QuartzConfigurations;
 
-import jakarta.annotation.PostConstruct;
+import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
